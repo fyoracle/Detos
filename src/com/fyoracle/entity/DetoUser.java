@@ -156,21 +156,21 @@ public class DetoUser implements java.io.Serializable {
 	}
 	
 	//
-	@OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER, mappedBy = "detouser")
+	@OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.LAZY, mappedBy = "detouser")
 	public Set<UrineTest> getUrinetests() {
 		return urinetests;
 	}
 	public void setUrinetests(Set<UrineTest> urinetests) {
 		this.urinetests = urinetests;
 	}
-	@OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER, mappedBy = "detouser")
+	@OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.LAZY, mappedBy = "detouser")
 	public Set<SignRecord> getSignrecords() {
 		return signrecords;
 	}
 	public void setSignrecords(Set<SignRecord> signrecords) {
 		this.signrecords = signrecords;
 	}
-	@OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER, mappedBy = "detouser")
+	@OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.LAZY, mappedBy = "detouser")
 	public Set<DetoRecord> getDetorecords() {
 		return detorecords;
 	}
