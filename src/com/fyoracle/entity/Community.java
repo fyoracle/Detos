@@ -55,7 +55,7 @@ public class Community implements java.io.Serializable {
 		this.name = name;
 	}
 	
-	@OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER, 
+	@OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.LAZY, 
 			targetEntity = DetoWorker.class, mappedBy = "community")
 	public Set<DetoWorker> getDetoworkers() {
 		return detoworkers;
@@ -64,7 +64,7 @@ public class Community implements java.io.Serializable {
 		this.detoworkers = detoworkers;
 	}
 	
-	@OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER, 
+	@OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.LAZY, 
 			targetEntity = DetoUser.class, mappedBy = "community")
 	public Set<DetoUser> getDetousers() {
 		return detousers;

@@ -48,7 +48,7 @@ public class MedicalCenter {
 		this.address = address;
 	}
 	
-	@OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER, mappedBy = "medicalcenter")
+	@OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.LAZY, mappedBy = "medicalcenter")
 	public Set<UrineTest> getUrinetests() {
 		return urinetests;
 	}

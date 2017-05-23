@@ -73,7 +73,7 @@ public class PoliceStation implements java.io.Serializable {
 		this.name = name;
 	}
 
-	@OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER, 
+	@OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.LAZY, 
 			targetEntity = DetoPolice.class, // 多方类 
 			mappedBy = "policestation")  // 在本类定义的属性
 	public Set<DetoPolice> getDetopolices() {
@@ -84,7 +84,7 @@ public class PoliceStation implements java.io.Serializable {
 		this.detopolices = detopolices;
 	}
 
-	@OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER, 
+	@OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.LAZY, 
 			targetEntity = PoliceStation.class, mappedBy = "policestation") 
 	public Set<PoliceStation> getPolicestations() {
 		return policestations;

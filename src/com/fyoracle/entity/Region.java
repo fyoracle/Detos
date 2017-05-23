@@ -44,7 +44,7 @@ public class Region implements java.io.Serializable {
 		this.id = id;
 	}
 
-	@ManyToOne(cascade = { CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH })  
+	@ManyToOne(fetch=FetchType.LAZY,cascade = CascadeType.PERSIST)  
     @JoinColumn(name = "pId") 
 	public Region getRegion() {
 		return region;
@@ -70,7 +70,7 @@ public class Region implements java.io.Serializable {
 		this.regionCode = regionCode;
 	}
 
-	@OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER, 
+	@OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.LAZY, 
 			targetEntity = Region.class, mappedBy = "region") 
 	public Set<Region> getRegions() {
 		return regions;
@@ -80,7 +80,7 @@ public class Region implements java.io.Serializable {
 		this.regions = regions;
 	}
 
-	@OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER, 
+	@OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.LAZY, 
 			targetEntity = PoliceStation.class, mappedBy = "region")
 	public Set<PoliceStation> getPolicestations() {
 		return policestations;
