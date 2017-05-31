@@ -45,7 +45,7 @@ public class PoliceStation implements java.io.Serializable {
 		this.id = id;
 	}
 
-	@ManyToOne(cascade = { CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH })  
+	@ManyToOne(fetch=FetchType.LAZY,cascade = { CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH })  
     @JoinColumn(name = "pId") 
 	public PoliceStation getPolicestation() {
 		return policestation;
@@ -55,7 +55,7 @@ public class PoliceStation implements java.io.Serializable {
 		this.policestation = policestation;
 	}
 
-	@ManyToOne(cascade = { CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH })  
+	@ManyToOne(fetch=FetchType.LAZY,cascade = { CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH })  
     @JoinColumn(name = "regId") // Íâ¼ü×Ö¶Î 
 	public Region getRegion() {
 		return region;
