@@ -16,6 +16,7 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
 
+// 社区工作站，吸毒人员接受戒毒/康复的地点
 @Entity
 @Table(name="community")
 public class Community implements java.io.Serializable {
@@ -25,10 +26,24 @@ public class Community implements java.io.Serializable {
 	private Integer id;
 	private PoliceStation policestation;
 	private String name;
+	private String address;
+	private String contactNum;
 	private Set<DetoWorker> detoworkers = new HashSet<DetoWorker>(0);
 	private Set<DetoUser> detousers = new HashSet<DetoUser>();
+		
 	
-	
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public String getContactNum() {
+		return contactNum;
+	}
+	public void setContactNum(String contactNum) {
+		this.contactNum = contactNum;
+	}
 	@Id
     @Column(name = "id", nullable = false, unique = true)
 	@GenericGenerator(name = "generator", strategy = "native")
