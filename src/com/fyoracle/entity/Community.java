@@ -16,7 +16,6 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
 
-// 社区工作站，吸毒人员接受戒毒/康复的地点
 @Entity
 @Table(name="community")
 public class Community implements java.io.Serializable {
@@ -29,7 +28,6 @@ public class Community implements java.io.Serializable {
 	private String address;
 	private String contactNum;
 	private Set<DetoWorker> detoworkers = new HashSet<DetoWorker>(0);
-	private Set<DetoUser> detousers = new HashSet<DetoUser>();
 		
 	
 	public String getAddress() {
@@ -56,7 +54,7 @@ public class Community implements java.io.Serializable {
 	}
 	
 	@ManyToOne(cascade = { CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH })  
-    @JoinColumn(name = "policeSationId") 
+    @JoinColumn(name = "policeSationId") 	
 	public PoliceStation getPolicestation() {
 		return policestation;
 	}
@@ -79,28 +77,9 @@ public class Community implements java.io.Serializable {
 		this.detoworkers = detoworkers;
 	}
 	
-	@OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.LAZY, 
-			targetEntity = DetoUser.class, mappedBy = "community")
-	public Set<DetoUser> getDetousers() {
-		return detousers;
-	}
-	public void setDetousers(Set<DetoUser> detousers) {
-		this.detousers = detousers;
-	}
-	
-	
-	
 	public Community() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Community(PoliceStation policestation, String name, Set<DetoWorker> detoworkers, Set<DetoUser> detousers) {
-		super();
-		this.policestation = policestation;
-		this.name = name;
-		this.detoworkers = detoworkers;
-		this.detousers = detousers;
-	}
-
 	
 }

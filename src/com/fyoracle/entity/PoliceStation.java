@@ -28,7 +28,7 @@ public class PoliceStation implements java.io.Serializable {
 	private String name;
 	private Set<DetoPolice> detopolices = new HashSet<DetoPolice>();
 	private Set<PoliceStation> policestations = new HashSet<PoliceStation>();
-	//private Set communities = new HashSet(0);
+	private Set<Community> communities = new HashSet<Community>(0);
 
 	// Constructors
 
@@ -94,5 +94,16 @@ public class PoliceStation implements java.io.Serializable {
 		this.policestations = policestations;
 	}
 
+	@OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.LAZY, 
+			targetEntity = Community.class, mappedBy = "policestation") 
+	public Set<Community> getCommunities() {
+		return communities;
+	}
+
+	public void setCommunities(Set<Community> communities) {
+		this.communities = communities;
+	}
+
+	
 	
 }
