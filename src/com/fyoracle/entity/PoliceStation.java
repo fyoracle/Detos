@@ -84,8 +84,7 @@ public class PoliceStation implements java.io.Serializable {
 		this.detopolices = detopolices;
 	}
 
-	@OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.LAZY, 
-			targetEntity = PoliceStation.class, mappedBy = "policestation") 
+	@OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.LAZY, targetEntity = PoliceStation.class, mappedBy = "policestation") 
 	public Set<PoliceStation> getPolicestations() {
 		return policestations;
 	}
