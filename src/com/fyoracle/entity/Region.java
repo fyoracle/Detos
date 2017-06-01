@@ -29,7 +29,7 @@ public class Region implements java.io.Serializable {
 	private String regionCode;
 	private Set<Region> regions = new HashSet<Region>();
 	private Set<PoliceStation> policestations = new HashSet<PoliceStation>();
-	//private Set<DetoUser> detousers = new HashSet<DetoUser>();
+	private Set<DetoUser> detousers = new HashSet<DetoUser>();
 
 	// Constructors
 
@@ -91,7 +91,7 @@ public class Region implements java.io.Serializable {
 		this.policestations = policestations;
 	}
 
-	/*
+	
 	@OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.LAZY, 
 			targetEntity = DetoUser.class, mappedBy = "region")
 	public Set<DetoUser> getDetousers() {
@@ -101,7 +101,7 @@ public class Region implements java.io.Serializable {
 	public void setDetousers(Set<DetoUser> detousers) {
 		this.detousers = detousers;
 	}
-	*/
+	
 	
 	
 }
