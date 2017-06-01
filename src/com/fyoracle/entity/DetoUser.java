@@ -36,11 +36,16 @@ public class DetoUser implements java.io.Serializable {
 	private String idCardNum;
 	private Date birthDate;
 	private Integer height;
-	private String permanentAddress;
-	private String permanetPoliceStation;
-	private String residentialAddress;
-	private String residentialPoliceStation;
-	private String headPortrait;
+	
+	private Integer permanentAddressId;
+	private String permanentAddress;// 户籍地地址
+	private Integer permanetPoliceStationId;
+	private String permanetPoliceStation;// 户籍地公安局
+	private Integer residentialAddressId;
+	private String residentialAddress;// 居住地地址
+	private Integer residentialPoliceStationId;
+	private String residentialPoliceStation;// 居住地派出所
+	private String headPortrait;// 头像
 	private Set<DetoRecord> detorecords = new HashSet<DetoRecord>();
 	
 	@Id
@@ -146,6 +151,31 @@ public class DetoUser implements java.io.Serializable {
 	}
 	public void setResidentialPoliceStation(String residentialPoliceStation) {
 		this.residentialPoliceStation = residentialPoliceStation;
+	}
+	
+	public Integer getPermanentAddressId() {
+		return permanentAddressId;
+	}
+	public void setPermanentAddressId(Integer permanentAddressId) {
+		this.permanentAddressId = permanentAddressId;
+	}
+	public Integer getPermanetPoliceStationId() {
+		return permanetPoliceStationId;
+	}
+	public void setPermanetPoliceStationId(Integer permanetPoliceStationId) {
+		this.permanetPoliceStationId = permanetPoliceStationId;
+	}
+	public Integer getResidentialAddressId() {
+		return residentialAddressId;
+	}
+	public void setResidentialAddressId(Integer residentialAddressId) {
+		this.residentialAddressId = residentialAddressId;
+	}
+	public Integer getResidentialPoliceStationId() {
+		return residentialPoliceStationId;
+	}
+	public void setResidentialPoliceStationId(Integer residentialPoliceStationId) {
+		this.residentialPoliceStationId = residentialPoliceStationId;
 	}
 	public String getHeadPortrait() {
 		return headPortrait;
