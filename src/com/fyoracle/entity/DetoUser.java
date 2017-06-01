@@ -37,13 +37,13 @@ public class DetoUser implements java.io.Serializable {
 	private Date birthDate;
 	private Integer height;
 	
-	private Integer permanentAddressId;
+	//private Integer permanentAddressId;
 	private String permanentAddress;// 户籍地地址
-	private Integer permanetPoliceStationId;
+	//private Integer permanetPoliceStationId;
 	private String permanetPoliceStation;// 户籍地公安局
-	private Integer residentialAddressId;
+	//private Integer residentialAddressId;
 	private String residentialAddress;// 居住地地址
-	private Integer residentialPoliceStationId;
+	//private Integer residentialPoliceStationId;
 	private String residentialPoliceStation;// 居住地派出所
 	private String headPortrait;// 头像
 	private Set<DetoRecord> detorecords = new HashSet<DetoRecord>();
@@ -152,7 +152,7 @@ public class DetoUser implements java.io.Serializable {
 	public void setResidentialPoliceStation(String residentialPoliceStation) {
 		this.residentialPoliceStation = residentialPoliceStation;
 	}
-	
+	/*
 	public Integer getPermanentAddressId() {
 		return permanentAddressId;
 	}
@@ -177,6 +177,7 @@ public class DetoUser implements java.io.Serializable {
 	public void setResidentialPoliceStationId(Integer residentialPoliceStationId) {
 		this.residentialPoliceStationId = residentialPoliceStationId;
 	}
+	*/
 	public String getHeadPortrait() {
 		return headPortrait;
 	}
