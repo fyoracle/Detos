@@ -22,22 +22,22 @@ public class PoliceStationTest extends BasicTest{
 	private RegionService regionService;
 	
 	@Test
-	public void testSave() {
+	public void Save() {
 		// Region
-		Region region = regionService.findById(4);
-		System.out.println(region.getName());
+		Region region = regionService.findById(5);
+		// System.out.println(region.getName());
 		
 		PoliceStation policeStation = new PoliceStation();
 		PoliceStation policeStation1 = policeStationService.findById(1);
 		
-		policeStation.setName("涪城区公安局");
+		policeStation.setName("高新区公安局");
 		policeStation.setRegion(region);
 		policeStation.setPolicestation(policeStation1);
 		policeStationService.save(policeStation);
 	}
 	
 	@Test
-	public void testFindAll() {
+	public void findAll() {
 		List<PoliceStation> policeStationLst = policeStationService.findAll();
 		for(PoliceStation policeStation:policeStationLst){
 			System.out.println(policeStation);

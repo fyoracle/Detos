@@ -24,12 +24,12 @@ public class DetoPoliceTest extends BasicTest{
 	@Test
 	public void save() {
 		// policestation
-		PoliceStation policeStation = policeStationService.findById(2);
+		PoliceStation policeStation = policeStationService.findById(3);
 		
 		DetoPolice detoPolice = new DetoPolice();
-		detoPolice.setName("ÐìÒøÈð");
-		detoPolice.setPoliceCode("´¨00185456");
-		detoPolice.setLoginName("185456");
+		detoPolice.setName("Âí¸£¾ü");
+		detoPolice.setPoliceCode("´¨00185666");
+		detoPolice.setLoginName("185666");
 		detoPolice.setPassword("111111");
 		detoPolice.setPolicestation(policeStation);
 		

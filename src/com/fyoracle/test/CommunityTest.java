@@ -24,12 +24,12 @@ public class CommunityTest extends BasicTest{
 	@Test
 	public void save() {
 		// 公安机关
-		PoliceStation policeStation = policeStationService.findById(2);
+		PoliceStation policeStation = policeStationService.findById(3);
 		
 		Community community = new Community();
-		community.setName("涪城区社区戒毒社区康复中心");
-		community.setAddress("绵阳市长虹大道中段25号");
-		community.setContactNum("0816 - 2580888");
+		community.setName("高新区社区戒毒康复工作站");
+		community.setAddress("绵阳市双碑中街20号");
+		community.setContactNum("0816 - 2580666");
 		community.setPolicestation(policeStation);
 		
 		communityService.save(community);

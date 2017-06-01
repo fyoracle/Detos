@@ -24,10 +24,10 @@ public class DetoWorkerTest extends BasicTest{
 	
 	@Test
 	public void save() {
-		String name = "«Ò Á’Í";
-		String loginName = "qiusz";
+		String name = "¡ıºŒ¡·";
+		String loginName = "liujl";
 		String password = "111111";
-		Community community = communityService.findById(1);
+		Community community = communityService.findById(2);
 		
 		DetoWorker detoWorker = new DetoWorker();
 		detoWorker.setName(name);;
