@@ -28,34 +28,34 @@ public class DetoUserTest extends BasicTest{
 	@Test
 	public void save() throws java.text.ParseException {
 		// 地区
-		Region regoin = regionService.findById(4); // 户籍地
+		Region regoin = regionService.findById(5); // 户籍地
 		
 		SimpleDateFormat sdf  =   new  SimpleDateFormat("yyyy-MM-dd");
 		Date date =null;
 		try {
-			date = (Date) sdf.parse("1987-04-02");
+			date = (Date) sdf.parse("1985-05-03");
 		} catch (ParseException e) {
 			// TODO 自动生成的 catch 块
 			e.printStackTrace();
 		}
 		
 		DetoUser detoUser = new DetoUser();
-		detoUser.setName("马乾峰");
-		detoUser.setAliasName("马三儿");
-		detoUser.setLoginName("maqf");
+		detoUser.setName("马福成");
+		detoUser.setAliasName("马老二");
+		detoUser.setLoginName("mafc");
 		detoUser.setPassword("111111");
-		detoUser.setMobileNumber("15808122742");
+		detoUser.setMobileNumber("15808122002");
 		detoUser.setSex(1);
 		detoUser.setNation("汉");
-		detoUser.setIdCardNum("523012198704021616");
+		detoUser.setIdCardNum("523012198505031235");
 		detoUser.setBirthDate(date);
-		detoUser.setHeight(172);
+		detoUser.setHeight(166);
 		
 		detoUser.setRegion(regoin);
-		detoUser.setPermanentAddress("绵阳市涪城区丝厂家属区");
-		detoUser.setPermanetPoliceStation("绵阳市涪城区公安局");
-		detoUser.setResidentialAddress("绵阳市涪城区丝厂家属区");
-		detoUser.setResidentialPoliceStation("绵阳市涪城区公安局");
+		detoUser.setPermanentAddress("绵阳市高新区普明西街11号");
+		detoUser.setPermanetPoliceStation("绵阳市高新区公安局");
+		detoUser.setResidentialAddress("绵阳市高新区普明西街11号");
+		detoUser.setResidentialPoliceStation("绵阳市高新区公安局");
 		
 		detoUserService.save(detoUser);
 	}
