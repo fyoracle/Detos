@@ -1,6 +1,7 @@
 package com.fyoracle.entity;
 
 import java.sql.Timestamp;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -25,10 +26,30 @@ public class DetoRecord {
 
 	private Integer id;
 	private DetoUser detouser;
+	// 抓获。 查获部门、查获地点、查获时间、查获毒品(多种)、尿检结果、尿检信息、吸毒事实 。。。
+	private Integer catchPoliceStationID;
+	private String catchPoliceStationName;
+	private String catchPlace;
+	private Date catchDate;
+	private String Detos;
+	private Integer urineTest;
+	private String urineTestInfo;
+	private String detoReality;
+	
+	private Integer registerUserId;
+	private String RegisterUserName;
 	private Timestamp registerTime;
 	private Timestamp registerVerifyTime;
-	private Timestamp communityReceiveTime;
+	
 	private Integer recordState;
+	// 处置
+	
+	// 接收
+	private Timestamp communityReceiveTime;
+	// 变更执行地
+	
+	// 终止
+	
 	private Set<UrineTest> urinetests = new HashSet<UrineTest>();
 	private Set<SignRecord> signrecords = new HashSet<SignRecord>();
 	
@@ -91,6 +112,67 @@ public class DetoRecord {
 		this.signrecords = signrecords;
 	}
 	
+	
+	public Integer getCatchPoliceStationID() {
+		return catchPoliceStationID;
+	}
+	public void setCatchPoliceStationID(Integer catchPoliceStationID) {
+		this.catchPoliceStationID = catchPoliceStationID;
+	}
+	public String getCatchPoliceStationName() {
+		return catchPoliceStationName;
+	}
+	public void setCatchPoliceStationName(String catchPoliceStationName) {
+		this.catchPoliceStationName = catchPoliceStationName;
+	}
+	public String getCatchPlace() {
+		return catchPlace;
+	}
+	public void setCatchPlace(String catchPlace) {
+		this.catchPlace = catchPlace;
+	}
+	public Date getCatchDate() {
+		return catchDate;
+	}
+	public void setCatchDate(Date catchDate) {
+		this.catchDate = catchDate;
+	}
+	public String getDetos() {
+		return Detos;
+	}
+	public void setDetos(String detos) {
+		Detos = detos;
+	}
+	public Integer getUrineTest() {
+		return urineTest;
+	}
+	public void setUrineTest(Integer urineTest) {
+		this.urineTest = urineTest;
+	}
+	public String getUrineTestInfo() {
+		return urineTestInfo;
+	}
+	public void setUrineTestInfo(String urineTestInfo) {
+		this.urineTestInfo = urineTestInfo;
+	}
+	public String getDetoReality() {
+		return detoReality;
+	}
+	public void setDetoReality(String detoReality) {
+		this.detoReality = detoReality;
+	}
+	public Integer getRegisterUserId() {
+		return registerUserId;
+	}
+	public void setRegisterUserId(Integer registerUserId) {
+		this.registerUserId = registerUserId;
+	}
+	public String getRegisterUserName() {
+		return RegisterUserName;
+	}
+	public void setRegisterUserName(String registerUserName) {
+		RegisterUserName = registerUserName;
+	}
 	public DetoRecord() {
 		super();
 		// TODO Auto-generated constructor stub
