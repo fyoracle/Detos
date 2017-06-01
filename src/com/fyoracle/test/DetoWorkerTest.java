@@ -49,7 +49,8 @@ public class DetoWorkerTest extends BasicTest{
 	public void findAll(){
 		List<DetoWorker> detoWorkerLst = detoWorkerService.findAll();
 		for(DetoWorker detoWorker:detoWorkerLst){
-			System.out.println(detoWorker);
+			System.out.println(detoWorker.getName());
+			System.out.println(detoWorker.getCommunity().getName());
 		}
 		
 	}
