@@ -26,7 +26,9 @@ public class DetoRecord {
 
 	private Integer id;
 	private DetoUser detouser;
+	private String detoUserName;
 	// 抓获。 查获部门、查获地点、查获时间、查获毒品(多种)、尿检结果、尿检信息、吸毒事实 。。。
+	
 	private Integer catchPoliceStationID;
 	private String catchPoliceStationName;
 	private String catchPlace;
@@ -97,14 +99,14 @@ public class DetoRecord {
 		this.recordState = recordState;
 	}
 	
-	@OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER, mappedBy = "detouser")
+	@OneToMany(cascade={CascadeType.PERSIST,CascadeType.MERGE}, fetch = FetchType.EAGER, mappedBy = "detouser")
 	public Set<UrineTest> getUrinetests() {
 		return urinetests;
 	}
 	public void setUrinetests(Set<UrineTest> urinetests) {
 		this.urinetests = urinetests;
 	}
-	@OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER, mappedBy = "detouser")
+	@OneToMany(cascade={CascadeType.PERSIST,CascadeType.MERGE}, fetch = FetchType.EAGER, mappedBy = "detouser")
 	public Set<SignRecord> getSignrecords() {
 		return signrecords;
 	}
@@ -172,6 +174,13 @@ public class DetoRecord {
 	}
 	public void setRegisterUserName(String registerUserName) {
 		RegisterUserName = registerUserName;
+	}
+	
+	public String getDetoUserName() {
+		return detoUserName;
+	}
+	public void setDetoUserName(String detoUserName) {
+		this.detoUserName = detoUserName;
 	}
 	public DetoRecord() {
 		super();

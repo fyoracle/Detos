@@ -185,8 +185,7 @@ public class DetoUser implements java.io.Serializable {
 		this.headPortrait = headPortrait;
 	}
 	
-	
-	@OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER, mappedBy = "detouser")
+	@OneToMany(cascade={CascadeType.PERSIST,CascadeType.MERGE}, fetch = FetchType.EAGER, mappedBy = "detouser")
 	public Set<DetoRecord> getDetorecords() {
 		return detorecords;
 	}
