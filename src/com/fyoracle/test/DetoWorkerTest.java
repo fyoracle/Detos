@@ -18,8 +18,6 @@ public class DetoWorkerTest extends BasicTest{
 	
 	@Autowired
 	private DetoWorkerService detoWorkerService;
-
-	@Autowired 
 	private CommunityService communityService;
 	
 	@Test

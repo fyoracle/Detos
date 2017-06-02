@@ -18,7 +18,6 @@ public class DetoPoliceTest extends BasicTest{
 	
 	@Autowired
 	private DetoPoliceService detoPoliceService;
-	@Autowired
 	private PoliceStationService policeStationService;
 	
 	@Test

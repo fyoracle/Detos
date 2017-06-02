@@ -2,6 +2,7 @@ package com.fyoracle.test;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,11 +25,8 @@ public class DetoRecordTest extends BasicTest{
 
 	@Autowired
 	private DetoRecordService detoRecordService;
-	@Autowired
 	private DetoUserService detoUserService;
-	@Autowired
 	private PoliceStationService policeStationService;
-	@Autowired
 	private DetoPoliceService detoPoliceService;
 
 	@Test
@@ -68,6 +66,15 @@ public class DetoRecordTest extends BasicTest{
 	public void delete(){
 		DetoRecord detoRecord = detoRecordService.findById(1);
 		detoRecordService.delete(detoRecord);
+	}
+	
+	@Test
+	public void findAll(){
+		List<DetoRecord> detoRecordLst = detoRecordService.findAll();
+		for(DetoRecord etoRecord:detoRecordLst){
+			System.out.println(etoRecord.getDetoReality());
+			System.out.println(etoRecord.getDetoUserName());
+		}
 	}
 
 }

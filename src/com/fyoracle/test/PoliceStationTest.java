@@ -18,7 +18,6 @@ public class PoliceStationTest extends BasicTest{
 
 	@Autowired
 	private PoliceStationService policeStationService;
-	@Autowired
 	private RegionService regionService;
 	
 	@Test
@@ -40,7 +39,7 @@ public class PoliceStationTest extends BasicTest{
 	public void findAll() {
 		List<PoliceStation> policeStationLst = policeStationService.findAll();
 		for(PoliceStation policeStation:policeStationLst){
-			System.out.println(policeStation);
+			System.out.println(policeStation.getName());
 		}
 	}
 

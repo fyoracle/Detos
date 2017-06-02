@@ -21,8 +21,6 @@ public class DetoUserTest extends BasicTest{
 
 	@Autowired
 	private DetoUserService detoUserService;
-	
-	@Autowired
 	private RegionService regionService;
 	
 	@Test
