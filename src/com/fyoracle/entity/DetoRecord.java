@@ -66,7 +66,7 @@ public class DetoRecord {
 		this.id = id;
 	}
 	
-	@ManyToOne(cascade = { CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH })  
+	@ManyToOne(fetch=FetchType.LAZY,cascade = { CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH })  
     @JoinColumn(name = "detoUserId") 
 	public DetoUser getDetouser() {
 		return detouser;
@@ -99,14 +99,14 @@ public class DetoRecord {
 		this.recordState = recordState;
 	}
 	
-	@OneToMany(cascade={CascadeType.PERSIST,CascadeType.MERGE}, fetch = FetchType.EAGER, mappedBy = "detouser")
+	@OneToMany(cascade={CascadeType.PERSIST,CascadeType.MERGE}, fetch = FetchType.LAZY, mappedBy = "detouser")
 	public Set<UrineTest> getUrinetests() {
 		return urinetests;
 	}
 	public void setUrinetests(Set<UrineTest> urinetests) {
 		this.urinetests = urinetests;
 	}
-	@OneToMany(cascade={CascadeType.PERSIST,CascadeType.MERGE}, fetch = FetchType.EAGER, mappedBy = "detouser")
+	@OneToMany(cascade={CascadeType.PERSIST,CascadeType.MERGE}, fetch = FetchType.LAZY, mappedBy = "detouser")
 	public Set<SignRecord> getSignrecords() {
 		return signrecords;
 	}
