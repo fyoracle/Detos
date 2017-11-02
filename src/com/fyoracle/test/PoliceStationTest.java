@@ -40,6 +40,7 @@ public class PoliceStationTest extends BasicTest{
 		List<PoliceStation> policeStationLst = policeStationService.findAll();
 		for(PoliceStation policeStation:policeStationLst){
 			System.out.println(policeStation.getName());
+			
 		}
 	}
 
