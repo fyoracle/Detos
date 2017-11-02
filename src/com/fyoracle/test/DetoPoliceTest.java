@@ -18,12 +18,13 @@ public class DetoPoliceTest extends BasicTest{
 	
 	@Autowired
 	private DetoPoliceService detoPoliceService;
+	@Autowired
 	private PoliceStationService policeStationService;
 	
 	@Test
 	public void save() {
-		// policestation
-		PoliceStation policeStation = policeStationService.findById(3);
+		
+		PoliceStation policeStation = policeStationService.findById(1);
 		
 		DetoPolice detoPolice = new DetoPolice();
 		detoPolice.setName("Âí¸£¾ü");

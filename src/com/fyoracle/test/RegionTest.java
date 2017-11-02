@@ -36,7 +36,7 @@ public class RegionTest extends BasicTest{
 	public void findAll(){
 		List<Region> regionList =regionService.findAll();
 		for(Region region:regionList){
-			System.out.println(region);
+			System.out.println(region.getName());
 		}
 	}
 }

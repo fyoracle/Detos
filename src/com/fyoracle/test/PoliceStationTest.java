@@ -18,18 +18,18 @@ public class PoliceStationTest extends BasicTest{
 
 	@Autowired
 	private PoliceStationService policeStationService;
+	@Autowired
 	private RegionService regionService;
 	
 	@Test
 	public void Save() {
-		// Region
-		Region region = regionService.findById(5);
-		// System.out.println(region.getName());
+		Region region = regionService.findById(1);
+		System.out.println(region.getName());
 		
 		PoliceStation policeStation = new PoliceStation();
 		PoliceStation policeStation1 = policeStationService.findById(1);
 		
-		policeStation.setName("高新区公安局");
+		policeStation.setName("涪城区公安局");
 		policeStation.setRegion(region);
 		policeStation.setPolicestation(policeStation1);
 		policeStationService.save(policeStation);

@@ -18,6 +18,7 @@ public class CommunityTest extends BasicTest{
 
 	@Autowired
 	private CommunityService communityService;
+	@Autowired
 	private PoliceStationService policeStationService;
 
 	@Test
