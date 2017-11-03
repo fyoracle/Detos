@@ -21,12 +21,13 @@ public class DetoUserTest extends BasicTest{
 
 	@Autowired
 	private DetoUserService detoUserService;
+	@Autowired
 	private RegionService regionService;
 	
 	@Test
 	public void save() throws java.text.ParseException {
 		// 地区
-		Region regoin = regionService.findById(5); // 户籍地
+		Region regoin = regionService.findById(3); // 户籍地
 		
 		SimpleDateFormat sdf  =   new  SimpleDateFormat("yyyy-MM-dd");
 		Date date =null;
@@ -62,6 +63,7 @@ public class DetoUserTest extends BasicTest{
 	public void findAll(){
 		List<DetoUser> detoUserLst = detoUserService.findAll();
 		for(DetoUser detoUser:detoUserLst){
+			System.out.println(detoUser);
 			System.out.println(detoUser.getName());
 			System.out.println(detoUser.getAliasName());
 			System.out.println(detoUser.getRegion().getName());
