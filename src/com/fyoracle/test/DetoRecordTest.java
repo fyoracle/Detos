@@ -25,15 +25,18 @@ public class DetoRecordTest extends BasicTest{
 
 	@Autowired
 	private DetoRecordService detoRecordService;
+	@Autowired
 	private DetoUserService detoUserService;
+	@Autowired
 	private PoliceStationService policeStationService;
+	@Autowired
 	private DetoPoliceService detoPoliceService;
 
 	@Test
 	public void save() throws java.text.ParseException {
-		PoliceStation policeStation = policeStationService.findById(2);// 公安局
+		PoliceStation policeStation = policeStationService.findById(3);// 公安局
 		DetoPolice detoPolice = detoPoliceService.findById(1); // 民警
-		DetoUser detoUser = detoUserService.findById(2); // 吸毒人员
+		DetoUser detoUser = detoUserService.findById(1); // 吸毒人员
 		
 		SimpleDateFormat sdf  =   new  SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		Date date =null;
